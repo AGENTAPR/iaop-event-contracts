@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.iaop.internal/events/onboarding.completed.schema.json",
+  "title": "onboarding.completed",
+  "description": "Payload schema for `onboarding.completed` v1. Status: DRAFT - pending producer/consumer agreement.",
+  "x-status": "DRAFT",
+  "x-privacy": "internal",
+  "x-producer": "iaop-onboarding-service",
+  "x-consumers": [
+    "iaop-agent-service",
+    "iaop-notification-service"
+  ],
+  "type": "object",
+  "required": [
+    "onboardingId",
+    "candidateId",
+    "completedAt"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "onboardingId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "candidateId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "completedAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

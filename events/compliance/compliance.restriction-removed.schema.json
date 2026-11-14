@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.iaop.internal/events/compliance.restriction-removed.schema.json",
+  "title": "compliance.restriction-removed",
+  "description": "Payload schema for `compliance.restriction-removed` v1. Status: DRAFT - pending producer/consumer agreement.",
+  "x-status": "DRAFT",
+  "x-privacy": "confidential",
+  "x-producer": "iaop-compliance-service",
+  "x-consumers": [
+    "iaop-eligibility-service",
+    "iaop-agent-service"
+  ],
+  "type": "object",
+  "required": [
+    "agentId",
+    "restrictionType",
+    "caseId"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "agentId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "restrictionType": {
+      "type": "string"
+    },
+    "caseId": {
+      "type": "string",
+      "format": "uuid"
+    }
+  }
+}

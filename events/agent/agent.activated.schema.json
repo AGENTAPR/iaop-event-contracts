@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.iaop.internal/events/agent.activated.schema.json",
+  "title": "agent.activated",
+  "description": "Payload schema for `agent.activated` v1. Status: DRAFT - pending producer/consumer agreement.",
+  "x-status": "DRAFT",
+  "x-privacy": "internal",
+  "x-producer": "iaop-agent-service",
+  "x-consumers": [
+    "iaop-agency-service",
+    "iaop-eligibility-service",
+    "iaop-notification-service",
+    "iaop-performance-service"
+  ],
+  "type": "object",
+  "required": [
+    "agentId",
+    "activatedAt",
+    "licenseId"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "agentId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "activatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "licenseId": {
+      "type": "string",
+      "format": "uuid"
+    }
+  }
+}

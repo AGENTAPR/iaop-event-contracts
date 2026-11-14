@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.iaop.internal/events/agency.agent-transferred.schema.json",
+  "title": "agency.agent-transferred",
+  "description": "Payload schema for `agency.agent-transferred` v1. Status: DRAFT - pending producer/consumer agreement.",
+  "x-status": "DRAFT",
+  "x-privacy": "internal",
+  "x-producer": "iaop-agency-service",
+  "x-consumers": [
+    "iaop-agent-service",
+    "iaop-commission-service"
+  ],
+  "type": "object",
+  "required": [
+    "agentId",
+    "fromAgencyId",
+    "toAgencyId"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "agentId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "fromAgencyId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "toAgencyId": {
+      "type": "string",
+      "format": "uuid"
+    }
+  }
+}

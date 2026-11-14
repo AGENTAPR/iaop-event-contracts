@@ -1,0 +1,299 @@
+{
+  "version": 1,
+  "events": [
+    {
+      "eventType": "recruitment.candidate-registered",
+      "eventVersion": 1,
+      "status": "DRAFT",
+      "producer": "iaop-recruitment-service",
+      "consumers": [
+        "iaop-onboarding-service"
+      ],
+      "privacy": "confidential",
+      "schema": "events/recruitment/recruitment.candidate-registered.schema.json"
+    },
+    {
+      "eventType": "recruitment.approved",
+      "eventVersion": 1,
+      "status": "DRAFT",
+      "producer": "iaop-recruitment-service",
+      "consumers": [
+        "iaop-onboarding-service",
+        "iaop-notification-service"
+      ],
+      "privacy": "internal",
+      "schema": "events/recruitment/recruitment.approved.schema.json"
+    },
+    {
+      "eventType": "onboarding.started",
+      "eventVersion": 1,
+      "status": "DRAFT",
+      "producer": "iaop-onboarding-service",
+      "consumers": [
+        "iaop-notification-service",
+        "iaop-workflow-service"
+      ],
+      "privacy": "internal",
+      "schema": "events/onboarding/onboarding.started.schema.json"
+    },
+    {
+      "eventType": "onboarding.completed",
+      "eventVersion": 1,
+      "status": "DRAFT",
+      "producer": "iaop-onboarding-service",
+      "consumers": [
+        "iaop-agent-service",
+        "iaop-notification-service"
+      ],
+      "privacy": "internal",
+      "schema": "events/onboarding/onboarding.completed.schema.json"
+    },
+    {
+      "eventType": "onboarding.rejected",
+      "eventVersion": 1,
+      "status": "DRAFT",
+      "producer": "iaop-onboarding-service",
+      "consumers": [
+        "iaop-notification-service"
+      ],
+      "privacy": "confidential",
+      "schema": "events/onboarding/onboarding.rejected.schema.json"
+    },
+    {
+      "eventType": "agent.created",
+      "eventVersion": 1,
+      "status": "DRAFT",
+      "producer": "iaop-agent-service",
+      "consumers": [
+        "iaop-agency-service",
+        "iaop-notification-service"
+      ],
+      "privacy": "internal",
+      "schema": "events/agent/agent.created.schema.json"
+    },
+    {
+      "eventType": "agent.activated",
+      "eventVersion": 1,
+      "status": "DRAFT",
+      "producer": "iaop-agent-service",
+      "consumers": [
+        "iaop-agency-service",
+        "iaop-eligibility-service",
+        "iaop-notification-service",
+        "iaop-performance-service"
+      ],
+      "privacy": "internal",
+      "schema": "events/agent/agent.activated.schema.json"
+    },
+    {
+      "eventType": "agent.suspended",
+      "eventVersion": 1,
+      "status": "DRAFT",
+      "producer": "iaop-agent-service",
+      "consumers": [
+        "iaop-eligibility-service",
+        "iaop-compliance-service",
+        "iaop-notification-service"
+      ],
+      "privacy": "confidential",
+      "schema": "events/agent/agent.suspended.schema.json"
+    },
+    {
+      "eventType": "agent.terminated",
+      "eventVersion": 1,
+      "status": "DRAFT",
+      "producer": "iaop-agent-service",
+      "consumers": [
+        "iaop-agency-service",
+        "iaop-eligibility-service",
+        "iaop-commission-service",
+        "iaop-notification-service"
+      ],
+      "privacy": "confidential",
+      "schema": "events/agent/agent.terminated.schema.json"
+    },
+    {
+      "eventType": "agency.agent-assigned",
+      "eventVersion": 1,
+      "status": "DRAFT",
+      "producer": "iaop-agency-service",
+      "consumers": [
+        "iaop-agent-service",
+        "iaop-commission-service"
+      ],
+      "privacy": "internal",
+      "schema": "events/agency/agency.agent-assigned.schema.json"
+    },
+    {
+      "eventType": "agency.agent-transferred",
+      "eventVersion": 1,
+      "status": "DRAFT",
+      "producer": "iaop-agency-service",
+      "consumers": [
+        "iaop-agent-service",
+        "iaop-commission-service"
+      ],
+      "privacy": "internal",
+      "schema": "events/agency/agency.agent-transferred.schema.json"
+    },
+    {
+      "eventType": "learning.training-completed",
+      "eventVersion": 1,
+      "status": "DRAFT",
+      "producer": "iaop-learning-service",
+      "consumers": [
+        "iaop-certification-service",
+        "iaop-eligibility-service"
+      ],
+      "privacy": "internal",
+      "schema": "events/learning/learning.training-completed.schema.json"
+    },
+    {
+      "eventType": "learning.assessment-passed",
+      "eventVersion": 1,
+      "status": "DRAFT",
+      "producer": "iaop-learning-service",
+      "consumers": [
+        "iaop-certification-service",
+        "iaop-eligibility-service"
+      ],
+      "privacy": "internal",
+      "schema": "events/learning/learning.assessment-passed.schema.json"
+    },
+    {
+      "eventType": "certification.credential-verified",
+      "eventVersion": 1,
+      "status": "DRAFT",
+      "producer": "iaop-certification-service",
+      "consumers": [
+        "iaop-eligibility-service",
+        "iaop-compliance-service"
+      ],
+      "privacy": "confidential",
+      "schema": "events/certification/certification.credential-verified.schema.json"
+    },
+    {
+      "eventType": "certification.credential-expired",
+      "eventVersion": 1,
+      "status": "DRAFT",
+      "producer": "iaop-certification-service",
+      "consumers": [
+        "iaop-eligibility-service",
+        "iaop-notification-service"
+      ],
+      "privacy": "confidential",
+      "schema": "events/certification/certification.credential-expired.schema.json"
+    },
+    {
+      "eventType": "eligibility.changed",
+      "eventVersion": 1,
+      "status": "DRAFT",
+      "producer": "iaop-eligibility-service",
+      "consumers": [
+        "iaop-agent-service",
+        "iaop-sales-service",
+        "iaop-portfolio-service"
+      ],
+      "privacy": "internal",
+      "schema": "events/eligibility/eligibility.changed.schema.json"
+    },
+    {
+      "eventType": "eligibility.revoked",
+      "eventVersion": 1,
+      "status": "DRAFT",
+      "producer": "iaop-eligibility-service",
+      "consumers": [
+        "iaop-agent-service",
+        "iaop-sales-service",
+        "iaop-compliance-service"
+      ],
+      "privacy": "confidential",
+      "schema": "events/eligibility/eligibility.revoked.schema.json"
+    },
+    {
+      "eventType": "sales.proposal-submitted",
+      "eventVersion": 1,
+      "status": "DRAFT",
+      "producer": "iaop-sales-service",
+      "consumers": [
+        "iaop-portfolio-service",
+        "iaop-notification-service"
+      ],
+      "privacy": "confidential",
+      "schema": "events/sales/sales.proposal-submitted.schema.json"
+    },
+    {
+      "eventType": "portfolio.policy-issued",
+      "eventVersion": 1,
+      "status": "DRAFT",
+      "producer": "iaop-portfolio-service",
+      "consumers": [
+        "iaop-commission-service",
+        "iaop-performance-service",
+        "iaop-notification-service"
+      ],
+      "privacy": "confidential",
+      "schema": "events/portfolio/portfolio.policy-issued.schema.json"
+    },
+    {
+      "eventType": "portfolio.policy-lapsed",
+      "eventVersion": 1,
+      "status": "DRAFT",
+      "producer": "iaop-portfolio-service",
+      "consumers": [
+        "iaop-commission-service",
+        "iaop-performance-service"
+      ],
+      "privacy": "confidential",
+      "schema": "events/portfolio/portfolio.policy-lapsed.schema.json"
+    },
+    {
+      "eventType": "commission.calculated",
+      "eventVersion": 1,
+      "status": "DRAFT",
+      "producer": "iaop-commission-service",
+      "consumers": [
+        "iaop-performance-service",
+        "iaop-notification-service"
+      ],
+      "privacy": "confidential",
+      "schema": "events/commission/commission.calculated.schema.json"
+    },
+    {
+      "eventType": "commission.reversed",
+      "eventVersion": 1,
+      "status": "DRAFT",
+      "producer": "iaop-commission-service",
+      "consumers": [
+        "iaop-performance-service"
+      ],
+      "privacy": "confidential",
+      "schema": "events/commission/commission.reversed.schema.json"
+    },
+    {
+      "eventType": "compliance.restriction-applied",
+      "eventVersion": 1,
+      "status": "DRAFT",
+      "producer": "iaop-compliance-service",
+      "consumers": [
+        "iaop-eligibility-service",
+        "iaop-agent-service",
+        "iaop-notification-service"
+      ],
+      "privacy": "confidential",
+      "schema": "events/compliance/compliance.restriction-applied.schema.json"
+    },
+    {
+      "eventType": "compliance.restriction-removed",
+      "eventVersion": 1,
+      "status": "DRAFT",
+      "producer": "iaop-compliance-service",
+      "consumers": [
+        "iaop-eligibility-service",
+        "iaop-agent-service"
+      ],
+      "privacy": "confidential",
+      "schema": "events/compliance/compliance.restriction-removed.schema.json"
+    }
+  ]
+}

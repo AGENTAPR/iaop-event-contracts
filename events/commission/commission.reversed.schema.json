@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.iaop.internal/events/commission.reversed.schema.json",
+  "title": "commission.reversed",
+  "description": "Payload schema for `commission.reversed` v1. Status: DRAFT - pending producer/consumer agreement.",
+  "x-status": "DRAFT",
+  "x-privacy": "confidential",
+  "x-producer": "iaop-commission-service",
+  "x-consumers": [
+    "iaop-performance-service"
+  ],
+  "type": "object",
+  "required": [
+    "commissionId",
+    "agentId",
+    "reason"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "commissionId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "agentId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "reason": {
+      "type": "string"
+    }
+  }
+}

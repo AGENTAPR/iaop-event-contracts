@@ -1,0 +1,6 @@
+# Documentation repo - keep root clean
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.iaop.internal/events/sales.proposal-submitted.schema.json",
+  "title": "sales.proposal-submitted",
+  "description": "Payload schema for `sales.proposal-submitted` v1. Status: DRAFT - pending producer/consumer agreement.",
+  "x-status": "DRAFT",
+  "x-privacy": "confidential",
+  "x-producer": "iaop-sales-service",
+  "x-consumers": [
+    "iaop-portfolio-service",
+    "iaop-notification-service"
+  ],
+  "type": "object",
+  "required": [
+    "proposalId",
+    "agentId",
+    "productCode"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "proposalId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "agentId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "productCode": {
+      "type": "string"
+    }
+  }
+}

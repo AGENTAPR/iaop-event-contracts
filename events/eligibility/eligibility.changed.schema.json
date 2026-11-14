@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.iaop.internal/events/eligibility.changed.schema.json",
+  "title": "eligibility.changed",
+  "description": "Payload schema for `eligibility.changed` v1. Status: DRAFT - pending producer/consumer agreement.",
+  "x-status": "DRAFT",
+  "x-privacy": "internal",
+  "x-producer": "iaop-eligibility-service",
+  "x-consumers": [
+    "iaop-agent-service",
+    "iaop-sales-service",
+    "iaop-portfolio-service"
+  ],
+  "type": "object",
+  "required": [
+    "agentId",
+    "eligible",
+    "evaluatedAt"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "agentId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "eligible": {
+      "type": "boolean"
+    },
+    "evaluatedAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

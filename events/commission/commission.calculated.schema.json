@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.iaop.internal/events/commission.calculated.schema.json",
+  "title": "commission.calculated",
+  "description": "Payload schema for `commission.calculated` v1. Status: DRAFT - pending producer/consumer agreement.",
+  "x-status": "DRAFT",
+  "x-privacy": "confidential",
+  "x-producer": "iaop-commission-service",
+  "x-consumers": [
+    "iaop-performance-service",
+    "iaop-notification-service"
+  ],
+  "type": "object",
+  "required": [
+    "commissionId",
+    "agentId",
+    "amount",
+    "currency"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "commissionId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "agentId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "amount": {
+      "type": "number"
+    },
+    "currency": {
+      "type": "string"
+    }
+  }
+}

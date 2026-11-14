@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.iaop.internal/events/learning.assessment-passed.schema.json",
+  "title": "learning.assessment-passed",
+  "description": "Payload schema for `learning.assessment-passed` v1. Status: DRAFT - pending producer/consumer agreement.",
+  "x-status": "DRAFT",
+  "x-privacy": "internal",
+  "x-producer": "iaop-learning-service",
+  "x-consumers": [
+    "iaop-certification-service",
+    "iaop-eligibility-service"
+  ],
+  "type": "object",
+  "required": [
+    "agentId",
+    "assessmentId",
+    "score"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "agentId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "assessmentId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "score": {
+      "type": "number"
+    }
+  }
+}

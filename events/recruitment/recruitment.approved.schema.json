@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.iaop.internal/events/recruitment.approved.schema.json",
+  "title": "recruitment.approved",
+  "description": "Payload schema for `recruitment.approved` v1. Status: DRAFT - pending producer/consumer agreement.",
+  "x-status": "DRAFT",
+  "x-privacy": "internal",
+  "x-producer": "iaop-recruitment-service",
+  "x-consumers": [
+    "iaop-onboarding-service",
+    "iaop-notification-service"
+  ],
+  "type": "object",
+  "required": [
+    "candidateId",
+    "approvedBy",
+    "approvedAt"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "candidateId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "approvedBy": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "approvedAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

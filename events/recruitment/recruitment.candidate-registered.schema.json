@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.iaop.internal/events/recruitment.candidate-registered.schema.json",
+  "title": "recruitment.candidate-registered",
+  "description": "Payload schema for `recruitment.candidate-registered` v1. Status: DRAFT - pending producer/consumer agreement.",
+  "x-status": "DRAFT",
+  "x-privacy": "confidential",
+  "x-producer": "iaop-recruitment-service",
+  "x-consumers": [
+    "iaop-onboarding-service"
+  ],
+  "type": "object",
+  "required": [
+    "candidateId",
+    "fullName",
+    "sourceChannel"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "candidateId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "fullName": {
+      "type": "string"
+    },
+    "sourceChannel": {
+      "type": "string"
+    }
+  }
+}

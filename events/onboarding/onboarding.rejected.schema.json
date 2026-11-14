@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.iaop.internal/events/onboarding.rejected.schema.json",
+  "title": "onboarding.rejected",
+  "description": "Payload schema for `onboarding.rejected` v1. Status: DRAFT - pending producer/consumer agreement.",
+  "x-status": "DRAFT",
+  "x-privacy": "confidential",
+  "x-producer": "iaop-onboarding-service",
+  "x-consumers": [
+    "iaop-notification-service"
+  ],
+  "type": "object",
+  "required": [
+    "onboardingId",
+    "candidateId",
+    "reason"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "onboardingId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "candidateId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "reason": {
+      "type": "string"
+    }
+  }
+}

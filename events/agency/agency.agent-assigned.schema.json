@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.iaop.internal/events/agency.agent-assigned.schema.json",
+  "title": "agency.agent-assigned",
+  "description": "Payload schema for `agency.agent-assigned` v1. Status: DRAFT - pending producer/consumer agreement.",
+  "x-status": "DRAFT",
+  "x-privacy": "internal",
+  "x-producer": "iaop-agency-service",
+  "x-consumers": [
+    "iaop-agent-service",
+    "iaop-commission-service"
+  ],
+  "type": "object",
+  "required": [
+    "agentId",
+    "agencyId",
+    "role"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "agentId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "agencyId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "role": {
+      "type": "string"
+    }
+  }
+}
