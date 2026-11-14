@@ -294,6 +294,56 @@
       ],
       "privacy": "confidential",
       "schema": "events/compliance/compliance.restriction-removed.schema.json"
+    },
+    {
+      "eventType": "integration.operation-dispatched",
+      "eventVersion": 1,
+      "status": "DRAFT",
+      "producer": "iaop-integration-service",
+      "consumers": [
+        "iaop-workflow-service",
+        "iaop-observability"
+      ],
+      "privacy": "internal",
+      "schema": "events/integration/integration.operation-dispatched.schema.json"
+    },
+    {
+      "eventType": "integration.operation-completed",
+      "eventVersion": 1,
+      "status": "DRAFT",
+      "producer": "iaop-integration-service",
+      "consumers": [
+        "iaop-workflow-service",
+        "iaop-notification-service",
+        "iaop-observability"
+      ],
+      "privacy": "internal",
+      "schema": "events/integration/integration.operation-completed.schema.json"
+    },
+    {
+      "eventType": "integration.operation-failed",
+      "eventVersion": 1,
+      "status": "DRAFT",
+      "producer": "iaop-integration-service",
+      "consumers": [
+        "iaop-workflow-service",
+        "iaop-notification-service",
+        "iaop-observability"
+      ],
+      "privacy": "internal",
+      "schema": "events/integration/integration.operation-failed.schema.json"
+    },
+    {
+      "eventType": "integration.callback-received",
+      "eventVersion": 1,
+      "status": "DRAFT",
+      "producer": "iaop-integration-service",
+      "consumers": [
+        "iaop-workflow-service",
+        "iaop-observability"
+      ],
+      "privacy": "internal",
+      "schema": "events/integration/integration.callback-received.schema.json"
     }
   ]
 }

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.iaop.internal/events/integration.operation-failed.schema.json",
+  "title": "integration.operation-failed",
+  "description": "Payload schema for `integration.operation-failed` v1. Emitted when an external operation fails permanently or exhausts retries.",
+  "x-status": "DRAFT",
+  "x-privacy": "internal",
+  "x-producer": "iaop-integration-service",
+  "x-consumers": [
+    "iaop-workflow-service",
+    "iaop-notification-service",
+    "iaop-observability"
+  ],
+  "type": "object",
+  "required": [
+    "operationId",
+    "provider",
+    "operationType",
+    "status",
+    "errorCode"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "operationId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "tenantId": {
+      "type": "string"
+    },
+    "requestingService": {
+      "type": "string"
+    },
+    "provider": {
+      "type": "string"
+    },
+    "operationType": {
+      "type": "string"
+    },
+    "businessReference": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["FAILED_FINAL", "REQUIRES_REVIEW"]
+    },
+    "errorCode": {
+      "type": "string"
+    },
+    "errorMessage": {
+      "type": "string"
+    },
+    "attemptCount": {
+      "type": "integer"
+    }
+  }
+}

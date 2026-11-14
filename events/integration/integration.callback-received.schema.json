@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.iaop.internal/events/integration.callback-received.schema.json",
+  "title": "integration.callback-received",
+  "description": "Payload schema for `integration.callback-received` v1. Emitted when an external provider callback is authenticated and received.",
+  "x-status": "DRAFT",
+  "x-privacy": "internal",
+  "x-producer": "iaop-integration-service",
+  "x-consumers": [
+    "iaop-workflow-service",
+    "iaop-observability"
+  ],
+  "type": "object",
+  "required": [
+    "callbackId",
+    "provider",
+    "receivedAt"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "callbackId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "provider": {
+      "type": "string"
+    },
+    "externalReference": {
+      "type": "string"
+    },
+    "operationId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "receivedAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}
