@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.iaop.internal/events/agency.leadership-assigned.schema.json",
+  "title": "agency.leadership-assigned",
+  "description": "Payload for `agency.leadership-assigned` v1.",
+  "x-status": "DRAFT",
+  "x-privacy": "internal",
+  "x-producer": "iaop-agency-service",
+  "x-consumers": [
+    "iaop-agency-service",
+    "iaop-agent-service",
+    "iaop-notification-service"
+  ],
+  "type": "object",
+  "required": [
+    "appointment_id",
+    "unit_id",
+    "agent_id",
+    "role",
+    "effective_from"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "appointment_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "unit_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "agent_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "role": {
+      "type": "string"
+    },
+    "effective_from": {
+      "type": "string",
+      "format": "date"
+    }
+  }
+}
