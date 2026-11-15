@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.iaop.internal/events/agency.organization-unit-created.schema.json",
+  "title": "agency.organization-unit-created",
+  "description": "Payload for `agency.organization-unit-created` v1.",
+  "x-status": "DRAFT",
+  "x-privacy": "internal",
+  "x-producer": "iaop-agency-service",
+  "x-consumers": [
+    "iaop-agency-service",
+    "iaop-agent-service",
+    "iaop-notification-service"
+  ],
+  "type": "object",
+  "required": [
+    "unit_id",
+    "agency_id",
+    "code",
+    "kind"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "unit_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "agency_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "code": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string"
+    }
+  }
+}

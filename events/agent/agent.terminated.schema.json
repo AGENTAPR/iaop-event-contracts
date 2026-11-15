@@ -2,21 +2,20 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://contracts.iaop.internal/events/agent.terminated.schema.json",
   "title": "agent.terminated",
-  "description": "Payload schema for `agent.terminated` v1. Status: DRAFT - pending producer/consumer agreement.",
+  "description": "Payload for `agent.terminated` v1 \u2014 terminal state.",
   "x-status": "DRAFT",
-  "x-privacy": "confidential",
+  "x-privacy": "internal",
   "x-producer": "iaop-agent-service",
   "x-consumers": [
     "iaop-agency-service",
-    "iaop-eligibility-service",
-    "iaop-commission-service",
+    "iaop-agent-bff",
     "iaop-notification-service"
   ],
   "type": "object",
   "required": [
     "agentId",
-    "reason",
-    "terminatedAt"
+    "status",
+    "reasonCode"
   ],
   "additionalProperties": true,
   "properties": {
@@ -24,12 +23,14 @@
       "type": "string",
       "format": "uuid"
     },
-    "reason": {
-      "type": "string"
-    },
-    "terminatedAt": {
+    "status": {
       "type": "string",
-      "format": "date-time"
+      "enum": [
+        "TERMINATED"
+      ]
+    },
+    "reasonCode": {
+      "type": "string"
     }
   }
 }

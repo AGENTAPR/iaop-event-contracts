@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.iaop.internal/events/agent.identity-linked.schema.json",
+  "title": "agent.identity-linked",
+  "description": "Payload for `agent.identity-linked` v1 \u2014 external IdP identity linked to agent.",
+  "x-status": "DRAFT",
+  "x-privacy": "internal",
+  "x-producer": "iaop-agent-service",
+  "x-consumers": [
+    "iaop-agency-service",
+    "iaop-agent-bff",
+    "iaop-notification-service"
+  ],
+  "type": "object",
+  "required": [
+    "agentId",
+    "linkId",
+    "issuer"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "agentId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "linkId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "issuer": {
+      "type": "string"
+    }
+  }
+}

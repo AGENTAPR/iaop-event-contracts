@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.iaop.internal/events/agency.status-changed.schema.json",
+  "title": "agency.status-changed",
+  "description": "Payload for `agency.status-changed` v1 \u2014 agency lifecycle transition (SUSPEND/REINSTATE/TERMINATE).",
+  "x-status": "DRAFT",
+  "x-privacy": "internal",
+  "x-producer": "iaop-agency-service",
+  "x-consumers": [
+    "iaop-agency-service",
+    "iaop-agent-service",
+    "iaop-notification-service"
+  ],
+  "type": "object",
+  "required": [
+    "agency_id",
+    "status"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "agency_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ACTIVE",
+        "SUSPENDED",
+        "TERMINATED"
+      ]
+    }
+  }
+}

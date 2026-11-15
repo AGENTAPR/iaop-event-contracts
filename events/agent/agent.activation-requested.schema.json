@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.iaop.internal/events/agent.activation-requested.schema.json",
+  "title": "agent.activation-requested",
+  "description": "Payload for `agent.activation-requested` v1.",
+  "x-status": "DRAFT",
+  "x-privacy": "internal",
+  "x-producer": "iaop-agent-service",
+  "x-consumers": [
+    "iaop-agency-service",
+    "iaop-agent-bff",
+    "iaop-notification-service"
+  ],
+  "type": "object",
+  "required": [
+    "agentId",
+    "appointmentId"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "agentId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "appointmentId": {
+      "type": "string",
+      "format": "uuid"
+    }
+  }
+}

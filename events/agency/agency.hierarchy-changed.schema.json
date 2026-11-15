@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.iaop.internal/events/agency.hierarchy-changed.schema.json",
+  "title": "agency.hierarchy-changed",
+  "description": "Payload for `agency.hierarchy-changed` v1 \u2014 effective-dated reparenting.",
+  "x-status": "DRAFT",
+  "x-privacy": "internal",
+  "x-producer": "iaop-agency-service",
+  "x-consumers": [
+    "iaop-agency-service",
+    "iaop-agent-service",
+    "iaop-notification-service"
+  ],
+  "type": "object",
+  "required": [
+    "unit_id",
+    "old_parent_id",
+    "new_parent_id",
+    "effective_from"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "unit_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "old_parent_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uuid"
+    },
+    "new_parent_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uuid"
+    },
+    "effective_from": {
+      "type": "string",
+      "format": "date"
+    }
+  }
+}

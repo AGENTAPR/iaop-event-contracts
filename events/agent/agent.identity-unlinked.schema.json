@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.iaop.internal/events/agent.identity-unlinked.schema.json",
+  "title": "agent.identity-unlinked",
+  "description": "Payload for `agent.identity-unlinked` v1.",
+  "x-status": "DRAFT",
+  "x-privacy": "internal",
+  "x-producer": "iaop-agent-service",
+  "x-consumers": [
+    "iaop-agency-service",
+    "iaop-agent-bff",
+    "iaop-notification-service"
+  ],
+  "type": "object",
+  "required": [
+    "agentId",
+    "linkId"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "agentId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "linkId": {
+      "type": "string",
+      "format": "uuid"
+    }
+  }
+}

@@ -2,20 +2,20 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://contracts.iaop.internal/events/agent.suspended.schema.json",
   "title": "agent.suspended",
-  "description": "Payload schema for `agent.suspended` v1. Status: DRAFT - pending producer/consumer agreement.",
+  "description": "Payload for `agent.suspended` v1.",
   "x-status": "DRAFT",
-  "x-privacy": "confidential",
+  "x-privacy": "internal",
   "x-producer": "iaop-agent-service",
   "x-consumers": [
-    "iaop-eligibility-service",
-    "iaop-compliance-service",
+    "iaop-agency-service",
+    "iaop-agent-bff",
     "iaop-notification-service"
   ],
   "type": "object",
   "required": [
     "agentId",
-    "reason",
-    "suspendedAt"
+    "status",
+    "reasonCode"
   ],
   "additionalProperties": true,
   "properties": {
@@ -23,12 +23,14 @@
       "type": "string",
       "format": "uuid"
     },
-    "reason": {
-      "type": "string"
-    },
-    "suspendedAt": {
+    "status": {
       "type": "string",
-      "format": "date-time"
+      "enum": [
+        "SUSPENDED"
+      ]
+    },
+    "reasonCode": {
+      "type": "string"
     }
   }
 }

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.iaop.internal/events/agent.reinstated.schema.json",
+  "title": "agent.reinstated",
+  "description": "Payload for `agent.reinstated` v1.",
+  "x-status": "DRAFT",
+  "x-privacy": "internal",
+  "x-producer": "iaop-agent-service",
+  "x-consumers": [
+    "iaop-agency-service",
+    "iaop-agent-bff",
+    "iaop-notification-service"
+  ],
+  "type": "object",
+  "required": [
+    "agentId",
+    "appointmentId",
+    "status",
+    "decisionRef"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "agentId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "appointmentId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ACTIVE"
+      ]
+    },
+    "decisionRef": {
+      "type": "string"
+    }
+  }
+}
